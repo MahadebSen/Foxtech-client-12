@@ -8,6 +8,7 @@ import Inventories from "./Pages/Inventories/Inventories";
 import Login from "./Pages/Login/Login";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Navbar from "./Pages/Navbar/Navbar";
+import SignUp from "./Pages/SignUp/SignUp";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
     </div>

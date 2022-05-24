@@ -15,7 +15,7 @@ const ContactUs = () => {
         }}
         className="flex items-center justify-center xl:rounded-xl"
       >
-        <div className="my-auto">
+        <div className="px-5">
           <p className="text-2xl mb-8 text-white">
             Please place your <span className="text-yellow-500">Email</span>{" "}
             address or, <span className="text-yellow-500">Sign up</span> on top
@@ -25,7 +25,7 @@ const ContactUs = () => {
               <input
                 type="text"
                 placeholder="Email Address"
-                class="input input-bordered w-[350px] text-lg"
+                class="input input-bordered w-[250px] md:w-[350px] text-lg"
               />
               <button class="btn btn-square px-10 bg-purple-500 hover:bg-purple-700">
                 <p>Submit</p>

@@ -14,8 +14,8 @@ const EachProduct = ({ product }) => {
             {name.length > 30 ? name.slice(0, 30) + "..." : name}
           </h2>
           <p>
-            {description.length > 150
-              ? description.slice(0, 150) + "..."
+            {description.length > 120
+              ? description.slice(0, 120) + "..."
               : description}
           </p>
           <p className="font-semibold text-lg">
