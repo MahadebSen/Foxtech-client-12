@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import Footer from "../Footer/Footer";
 import EachProduct from "../Home/Products/EachProduct";
 
 const Inventories = () => {
@@ -19,6 +20,7 @@ const Inventories = () => {
           <EachProduct key={product._id} product={product}></EachProduct>
         ))}
       </div>
+      <Footer></Footer>
     </div>
   );
 };

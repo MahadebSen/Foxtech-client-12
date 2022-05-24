@@ -10,7 +10,9 @@ const EachProduct = ({ product }) => {
           <img className="rounded-xl" src={img} alt="" />
         </figure>
         <div class="card-body text-left">
-          <h2 class="card-title">{name}</h2>
+          <h2 class="card-title">
+            {name.length > 30 ? name.slice(0, 30) + "..." : name}
+          </h2>
           <p>
             {description.length > 150
               ? description.slice(0, 150) + "..."

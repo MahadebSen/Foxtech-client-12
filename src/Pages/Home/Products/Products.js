@@ -12,7 +12,6 @@ const Products = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  console.log(products);
 
   return (
     <div className="mb-24">
