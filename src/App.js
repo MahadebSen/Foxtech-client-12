@@ -2,7 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
+import AddProduct from "./Pages/Dashboard/AddProduct/AddProduct";
+import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import ManageOrders from "./Pages/Dashboard/ManageOrders/ManageOrders";
+import ManageProducts from "./Pages/Dashboard/ManageProducts/ManageProducts";
+import ManageUsers from "./Pages/Dashboard/ManageUsers/ManageUsers";
+import MyOrder from "./Pages/Dashboard/MyOrder/MyOrder";
+import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
 import EachProduct from "./Pages/EachProduct/EachProduct";
 import Home from "./Pages/Home/Home";
 import Inventories from "./Pages/Inventories/Inventories";
@@ -22,7 +29,15 @@ function App() {
         <Route path="/products/:id" element={<EachProduct />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<MyOrder />} />
+          <Route path="addreview" element={<AddReview />} />
+          <Route path="myprofile" element={<MyProfile />} />
+          <Route path="manageusers" element={<ManageUsers />} />
+          <Route path="manageproducts" element={<ManageProducts />} />
+          <Route path="manageorders" element={<ManageOrders />} />
+          <Route path="addproduct" element={<AddProduct />} />
+        </Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
