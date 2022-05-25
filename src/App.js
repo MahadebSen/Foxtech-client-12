@@ -5,6 +5,7 @@ import Blogs from "./Pages/Blogs/Blogs";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home/Home";
 import Inventories from "./Pages/Inventories/Inventories";
+import ForgetPassword from "./Pages/Login/ForgetPassword";
 import Login from "./Pages/Login/Login";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Navbar from "./Pages/Navbar/Navbar";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>

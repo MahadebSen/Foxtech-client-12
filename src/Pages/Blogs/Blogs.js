@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../Footer/Footer";
 import EachBlog from "./EachBlog";
 
 const Blogs = () => {
@@ -11,10 +12,13 @@ const Blogs = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-5 mx-3 my-7">
-      {items.map((item, index) => (
-        <EachBlog key={item._id} item={item} index={index}></EachBlog>
-      ))}
+    <div>
+      <div className="grid grid-cols-1 gap-5 mx-3 my-7">
+        {items.map((item, index) => (
+          <EachBlog key={item._id} item={item} index={index}></EachBlog>
+        ))}
+      </div>
+      <Footer></Footer>
     </div>
   );
 };

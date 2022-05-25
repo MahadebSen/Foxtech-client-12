@@ -30,7 +30,9 @@ const Login = () => {
               />
             </div>
             <div className="text-sm">
-              <p className="my-2 text-red-500">Forget Password</p>
+              <p className="my-2 text-red-500">
+                <Link to="/forgetpassword">Forget Password</Link>
+              </p>
               <p className="my-3">
                 New here?{" "}
                 <Link className="text-red-500" to="/signup">
