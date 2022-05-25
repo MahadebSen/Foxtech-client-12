@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import EachProduct from "./Pages/EachProduct/EachProduct";
 import Home from "./Pages/Home/Home";
 import Inventories from "./Pages/Inventories/Inventories";
 import ForgetPassword from "./Pages/Login/ForgetPassword";
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/inventories" element={<Inventories />}></Route>
+        <Route path="/products/:id" element={<EachProduct />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>

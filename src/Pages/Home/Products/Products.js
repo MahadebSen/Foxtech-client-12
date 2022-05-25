@@ -1,12 +1,12 @@
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../Loading/Loading";
-import EachProduct from "./EachProduct";
+import EachProductCard from "./EachProductCard";
 
 const Products = () => {
   const navigate = useNavigate();
   const { data: products, isLoading } = useQuery("items", () =>
-    fetch("fakeDB.json").then((res) => res.json())
+    fetch("http://localhost:5000/products").then((res) => res.json())
   );
 
   if (isLoading) {
@@ -18,7 +18,10 @@ const Products = () => {
       <p className="text-4xl mt-32 mb-20">Our Products</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-10">
         {products.slice(0, 6).map((product) => (
-          <EachProduct key={product._id} product={product}></EachProduct>
+          <EachProductCard
+            key={product._id}
+            product={product}
+          ></EachProductCard>
         ))}
       </div>
       <div className="mt-16">

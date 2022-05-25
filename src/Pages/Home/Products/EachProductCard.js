@@ -1,8 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const EachProduct = ({ product }) => {
-  const { img, name, description, minimun_Order_Quantity, available, price } =
-    product;
+const EachProductCard = ({ product }) => {
+  const navigate = useNavigate();
+  const {
+    _id,
+    img,
+    name,
+    description,
+    minimun_Order_Quantity,
+    available,
+    price,
+  } = product;
+
+  const handleBuyNow = (id) => {
+    navigate("/products/" + id);
+  };
+
   return (
     <div>
       <div class="card card-compact bg-base-100 shadow-xl border-2">
@@ -28,8 +42,13 @@ const EachProduct = ({ product }) => {
           <p className="font-semibold text-lg">
             Price: $<span className="text-red-600 text-xl">{price}</span>
           </p>
-          <div class="card-actions justify-center my-2">
-            <button class="btn btn-primary">Buy Now</button>
+          <div className="card-actions justify-center my-2">
+            <button
+              onClick={() => handleBuyNow(_id)}
+              className="btn btn-primary"
+            >
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
@@ -37,4 +56,4 @@ const EachProduct = ({ product }) => {
   );
 };
 
-export default EachProduct;
+export default EachProductCard;

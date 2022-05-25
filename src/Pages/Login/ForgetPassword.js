@@ -13,7 +13,7 @@ const ForgetPassword = () => {
             <input
               placeholder="Email"
               type="email"
-              className="border-b-[1px] border-[#999] outline-0 w-[315px] md:w-[400px] px-[32px] py-2 text-lg"
+              className="border-b-[1px] border-[#999] outline-0 w-[315px] md:w-[370px] px-[32px] py-2 text-lg"
             />
           </div>
           <div className="pt-3 my-10">
