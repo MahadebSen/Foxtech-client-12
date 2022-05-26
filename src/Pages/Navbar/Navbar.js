@@ -1,8 +1,23 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import logo from "../../images/logo.png";
+import Loading from "../Loading/Loading";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
+
+  const handleSignOut = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
   const manus = (
     <>
       <li>
@@ -14,11 +29,17 @@ const Navbar = () => {
       <li>
         <Link to="/myportfolio">My Portfolio</Link>
       </li>
+      {user && (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      )}
       <li>
-        <Link to="/dashboard">Dashboard</Link>
-      </li>
-      <li>
-        <Link to="/login">Log in</Link>
+        {user ? (
+          <button onClick={handleSignOut}>Sign Out</button>
+        ) : (
+          <Link to="/login">Log in</Link>
+        )}
       </li>
       <li>
         <Link to="/about">About</Link>

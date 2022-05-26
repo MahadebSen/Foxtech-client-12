@@ -18,6 +18,9 @@ import Login from "./Pages/Login/Login";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Navbar from "./Pages/Navbar/Navbar";
 import SignUp from "./Pages/SignUp/SignUp";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -43,6 +46,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/about" element={<About />}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
