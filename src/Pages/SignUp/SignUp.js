@@ -41,7 +41,7 @@ const SignUp = () => {
   const [signInWithGithub, githubUser, githubLoading, githubError] =
     useSignInWithGithub(auth);
 
-  const [token] = useToken(user);
+  const [token] = useToken(user || googleUser || githubUser);
 
   const handleSignUp = async (data) => {
     const name = await data.name;
@@ -57,6 +57,14 @@ const SignUp = () => {
     }
   };
 
+  const handleGoogle = () => {
+    signInWithGoogle();
+  };
+
+  const handleGithub = () => {
+    signInWithGithub();
+  };
+
   if (loading || updating || googleLoading || githubLoading) {
     return <Loading></Loading>;
   }
@@ -69,6 +77,10 @@ const SignUp = () => {
   let errorMsg;
   if (error) {
     errorMsg = <p className="text-red-500">{error.message}</p>;
+  } else if (googleError) {
+    errorMsg = <p className="text-red-500">{googleError.message}</p>;
+  } else if (githubError) {
+    errorMsg = <p className="text-red-500">{githubError.message}</p>;
   }
 
   return (
@@ -202,10 +214,20 @@ const SignUp = () => {
             <p>Or, you may choose,</p>
             <div className="flex flex-row gap-3 mt-4">
               <div className="hover:shadow-2xl rounded-xl">
-                <img className="w-[75px]" src={google} alt="" />
+                <img
+                  onClick={handleGoogle}
+                  className="w-[75px]"
+                  src={google}
+                  alt=""
+                />
               </div>
               <div className="hover:shadow-2xl rounded-xl">
-                <img className="w-[75px]" src={github} alt="" />
+                <img
+                  onClick={handleGithub}
+                  className="w-[75px]"
+                  src={github}
+                  alt=""
+                />
               </div>
             </div>
           </div>
