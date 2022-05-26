@@ -21,6 +21,7 @@ import SignUp from "./Pages/SignUp/SignUp";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import RequireAuth from "./CustomHooks/RequireAuth";
 
 function App() {
   return (
@@ -29,10 +30,24 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/inventories" element={<Inventories />}></Route>
-        <Route path="/products/:id" element={<EachProduct />}></Route>
+        <Route
+          path="/products/:id"
+          element={
+            <RequireAuth>
+              <EachProduct />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route index element={<MyOrder />} />
           <Route path="addreview" element={<AddReview />} />
           <Route path="myprofile" element={<MyProfile />} />

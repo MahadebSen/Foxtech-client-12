@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import login from "../../images/logIn.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../images/Google.png";
 import github from "../../images/Github.png";
 import auth from "../../firebase.init";
@@ -17,6 +17,8 @@ import Loading from "../Loading/Loading";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -54,8 +56,7 @@ const Login = () => {
   }
 
   if (token) {
-    console.log(user);
-    navigate("/");
+    navigate(from, { replace: true });
   }
 
   let errorMsg;

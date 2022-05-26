@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import signup from "../../images/signUp.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from "../../images/Google.png";
 import github from "../../images/Github.png";
 import { toast } from "react-toastify";
@@ -24,6 +24,8 @@ import Loading from "../Loading/Loading";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     formState: { errors },
@@ -70,8 +72,7 @@ const SignUp = () => {
   }
 
   if (token) {
-    console.log(user);
-    navigate("/");
+    navigate(from, { replace: true });
   }
 
   let errorMsg;
