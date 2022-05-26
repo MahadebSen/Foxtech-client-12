@@ -1,10 +1,15 @@
+import { async } from "@firebase/util";
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const EachProduct = () => {
   const [product, setProduct] = useState({});
   const params = useParams();
+  const [user] = useAuthState(auth);
 
   const url = `http://localhost:5000/products/${params.id}`;
 
@@ -13,6 +18,46 @@ const EachProduct = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [url]);
+
+  const handlePurchase = async (event) => {
+    event.preventDefault();
+    if (
+      parseInt(event.target.quantity.value) < parseInt(minimun_Order_Quantity)
+    ) {
+      return toast.error(
+        `You have to order minimum ${minimun_Order_Quantity} units.`
+      );
+    } else if (parseInt(event.target.quantity.value) >= parseInt(available)) {
+      return toast.error("Not available.");
+    }
+    const updatedAvailable =
+      parseInt(await available) - parseInt(await event.target.quantity.value);
+
+    const order = {
+      img,
+      name,
+      description,
+      minimun_Order_Quantity,
+      available: updatedAvailable,
+      price,
+      userName: event.target.name.value,
+      email: event.target.email.value,
+      address: event.target.address.value,
+      phoneNumber: event.target.phNumber.value,
+      orderQuantity: event.target.quantity.value,
+      totalPrice: parseInt(event.target.quantity.value) * parseInt(price),
+    };
+
+    fetch(`http://localhost:5000/products/${params.id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
 
   const { img, name, description, minimun_Order_Quantity, available, price } =
     product;
@@ -43,17 +88,53 @@ const EachProduct = () => {
             <p className="mb-9 font-semibold text-lg">
               Price: $<span className="text-red-600 text-xl">{price}</span>
             </p>
-            <div class="flex justify-center">
+            <form onSubmit={handlePurchase} className="flex flex-col gap-2">
+              <input
+                type="text"
+                id="hero-field"
+                name="name"
+                value={user.displayName}
+                class="w-full mr-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-purple-200 focus:bg-transparent focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                disabled
+              ></input>
+              <input
+                type="email"
+                id="hero-field"
+                name="email"
+                value={user.email}
+                class="w-full mr-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-purple-200 focus:bg-transparent focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                disabled
+              ></input>
+              <textarea
+                type="text"
+                id="hero-field"
+                name="address"
+                placeholder="Your address"
+                class="w-full mr-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-purple-200 focus:bg-transparent focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required
+              ></textarea>
               <input
                 type="number"
                 id="hero-field"
-                name="hero-field"
+                name="phNumber"
+                placeholder="Mobile number"
                 class="w-full mr-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-purple-200 focus:bg-transparent focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required
               ></input>
-              <button class="inline-flex text-white bg-purple-500 border-0 py-3 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">
-                Purchase
-              </button>
-            </div>
+              <div class="flex justify-center">
+                <input
+                  type="number"
+                  id="hero-field"
+                  name="quantity"
+                  placeholder="Quantity"
+                  class="w-full mr-5 bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-purple-200 focus:bg-transparent focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  required
+                ></input>
+                <button class="inline-flex text-white bg-purple-500 border-0 py-3 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">
+                  Purchase
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
