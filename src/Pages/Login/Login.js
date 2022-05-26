@@ -38,7 +38,6 @@ const Login = () => {
   const handleLogin = async (data) => {
     const email = await data.email;
     const password = await data.password;
-
     await signInWithEmailAndPassword(email, password);
   };
 
