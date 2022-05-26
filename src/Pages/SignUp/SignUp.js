@@ -77,6 +77,8 @@ const SignUp = () => {
   let errorMsg;
   if (error) {
     errorMsg = <p className="text-red-500">{error.message}</p>;
+  } else if (updatingError) {
+    errorMsg = <p className="text-red-500">{updatingError.message}</p>;
   } else if (googleError) {
     errorMsg = <p className="text-red-500">{googleError.message}</p>;
   } else if (githubError) {
