@@ -22,6 +22,7 @@ import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./CustomHooks/RequireAuth";
+import NotFound from "./Pages/404/NotFound";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <ToastContainer />
     </div>
