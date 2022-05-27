@@ -89,7 +89,7 @@ const SignUp = () => {
   return (
     <section className="flex items-center justify-center my-[120px] mx-[60px] text-left">
       <div className="flex-1 flex justify-center items-center border-2 rounded-xl shadow-xl">
-        <div className="mx-16 my-12">
+        <div className="m-16">
           <form
             onSubmit={handleSubmit(handleSignUp)}
             className="flex flex-col gap-1"

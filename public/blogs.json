@@ -2,7 +2,7 @@
   {
     "_id": "aa11",
     "question": "How to improve the performance of a React application?",
-    "answer": "Their site accomplishes both of these goals by providing in-depth information about their capabilities, as well as a “knowledge center” with a blog, white papers, and other industry resources. These resources not only help potential customers become more informed about their options but also establish APC as a leader in their industry."
+    "answer": "These are 5 steps to improve the performance of React app: a. Use React.Fragment or, '<></>' to avoid adding extra nodes to the DOM. b. Use production build (npm run build) before deploying, which create a production ready file of your app in a build. c. Use React.Suspense and React.Lazy for lazy loading components. d. Use React.memo for component memorization. e. Virtualize a Large List Using react-window."
   },
   {
     "_id": "ss55",

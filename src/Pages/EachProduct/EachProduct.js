@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -19,6 +18,9 @@ const EachProduct = () => {
       .then((data) => setProduct(data));
   }, [url]);
 
+  const { img, name, description, minimun_Order_Quantity, available, price } =
+    product;
+
   const handlePurchase = async (event) => {
     event.preventDefault();
     if (
@@ -30,6 +32,7 @@ const EachProduct = () => {
     } else if (parseInt(event.target.quantity.value) >= parseInt(available)) {
       return toast.error("Not available.");
     }
+
     const updatedAvailable =
       parseInt(await available) - parseInt(await event.target.quantity.value);
 
@@ -58,9 +61,6 @@ const EachProduct = () => {
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
-
-  const { img, name, description, minimun_Order_Quantity, available, price } =
-    product;
 
   return (
     <div>
