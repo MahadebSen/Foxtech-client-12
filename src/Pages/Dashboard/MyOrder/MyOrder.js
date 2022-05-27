@@ -30,7 +30,7 @@ const MyOrder = () => {
   return (
     <div>
       <p>my order {orders.length}</p>
-      <div class="overflow-x-auto">
+      <div class="overflow-x-auto flex justify-start mt-[0px]">
         <table class="table w-full">
           {/* <!-- head --> */}
           <thead>
