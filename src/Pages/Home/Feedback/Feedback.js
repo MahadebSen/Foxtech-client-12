@@ -16,7 +16,7 @@ const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("feedback.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data));
   }, []);
