@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const EachProduct = () => {
   const [product, setProduct] = useState({});
   const params = useParams();
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
   const url = `http://localhost:5000/products/${params.id}`;
@@ -59,7 +60,11 @@ const EachProduct = () => {
       body: JSON.stringify(order),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.acknowledged) {
+          navigate("/dashboard");
+        }
+      });
   };
 
   return (

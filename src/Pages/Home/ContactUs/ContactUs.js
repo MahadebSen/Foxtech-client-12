@@ -20,7 +20,7 @@ const ContactUs = () => {
             Please place your <span className="text-yellow-500">Email</span>{" "}
             address or, <span className="text-yellow-500">Sign up</span> on top
           </p>
-          <div class="form-control">
+          <div class="form-control ">
             <div class="input-group justify-center">
               <input
                 type="text"

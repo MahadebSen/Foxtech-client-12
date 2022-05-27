@@ -4,8 +4,8 @@ import faq from "../../../images/faq.jpg";
 const Faq = () => {
   return (
     <section>
-      <p className="text-4xl mt-[145px] mb-10">FAQs</p>
-      <div className="flex flex-row gap-8 justify-center items-center mx-12 mb-[120px]">
+      <p className="text-4xl mt-[145px] mb-16 lg:mb-10">FAQs</p>
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 justify-center items-center mx-12 mb-[120px]">
         <div className="flex-1 text-left">
           <div
             tabindex="0"
