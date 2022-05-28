@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Foxtech
+
+### Live Site
+
+https://foxtech-90c48.web.app/
+
+## 5 Feature of this site
+
+- You can make admin
+- You can add product
+- You can add review
+- You can edit your profile
+- Payment system
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
