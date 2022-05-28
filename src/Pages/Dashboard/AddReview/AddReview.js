@@ -17,7 +17,7 @@ const AddReview = () => {
       feedback: await event.target.message.value,
     };
 
-    const url = `http://localhost:5000/addreview?email=${user.email}`;
+    const url = `https://vast-journey-52196.herokuapp.com/addreview?email=${user.email}`;
 
     fetch(url, {
       method: "POST",

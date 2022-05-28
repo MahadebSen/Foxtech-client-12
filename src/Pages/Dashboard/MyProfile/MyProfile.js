@@ -7,7 +7,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [updatedUser, setUpdatedUser] = useState({});
 
-  const url = `http://localhost:5000/myprofile?email=${user.email}`;
+  const url = `https://vast-journey-52196.herokuapp.com/myprofile?email=${user.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -39,7 +39,7 @@ const MyProfile = () => {
     };
     // console.table(profile);
 
-    const url2 = `http://localhost:5000/user?email=${user.email}`;
+    const url2 = `https://vast-journey-52196.herokuapp.com/user?email=${user.email}`;
 
     fetch(url2, {
       method: "PUT",

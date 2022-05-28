@@ -6,7 +6,9 @@ import EachProductCard from "./EachProductCard";
 const Products = () => {
   const navigate = useNavigate();
   const { data: products, isLoading } = useQuery("items", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
+    fetch("https://vast-journey-52196.herokuapp.com/products").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

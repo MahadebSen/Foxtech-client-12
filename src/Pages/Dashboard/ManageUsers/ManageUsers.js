@@ -8,7 +8,7 @@ import EachUser from "./EachUser";
 const ManageUsers = () => {
   const [user] = useAuthState(auth);
 
-  const url = `http://localhost:5000/users?email=${user.email}`;
+  const url = `https://vast-journey-52196.herokuapp.com/users?email=${user.email}`;
 
   const {
     data: users,

@@ -7,7 +7,7 @@ const ManageOrders = () => {
   const [user] = useAuthState(auth);
   const [allOrders, setAllOrders] = useState([]);
 
-  const url = `http://localhost:5000/allorders?email=${user?.email}`;
+  const url = `https://vast-journey-52196.herokuapp.com/allorders?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {

@@ -11,7 +11,7 @@ const EachProduct = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
-  const url = `http://localhost:5000/products/${params.id}`;
+  const url = `https://vast-journey-52196.herokuapp.com/products/${params.id}`;
 
   useEffect(() => {
     fetch(url)
@@ -52,7 +52,7 @@ const EachProduct = () => {
       totalPrice: parseInt(event.target.quantity.value) * parseInt(price),
     };
 
-    fetch(`http://localhost:5000/products/${params.id}`, {
+    fetch(`https://vast-journey-52196.herokuapp.com/products/${params.id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

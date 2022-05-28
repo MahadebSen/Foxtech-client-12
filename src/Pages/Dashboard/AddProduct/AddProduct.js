@@ -18,7 +18,7 @@ const AddProduct = () => {
       price: await event.target.price.value,
     };
 
-    const url = `http://localhost:5000/addproduct?email=${user.email}`;
+    const url = `https://vast-journey-52196.herokuapp.com/addproduct?email=${user.email}`;
 
     fetch(url, {
       method: "POST",
