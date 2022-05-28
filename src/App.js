@@ -23,6 +23,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./CustomHooks/RequireAuth";
 import NotFound from "./Pages/404/NotFound";
+import RequireAdmin from "./CustomHooks/RequireAdmin";
 
 function App() {
   return (
@@ -52,10 +53,38 @@ function App() {
           <Route index element={<MyOrder />} />
           <Route path="addreview" element={<AddReview />} />
           <Route path="myprofile" element={<MyProfile />} />
-          <Route path="manageusers" element={<ManageUsers />} />
-          <Route path="manageproducts" element={<ManageProducts />} />
-          <Route path="manageorders" element={<ManageOrders />} />
-          <Route path="addproduct" element={<AddProduct />} />
+          <Route
+            path="manageusers"
+            element={
+              <RequireAdmin>
+                <ManageUsers />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageproducts"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageorders"
+            element={
+              <RequireAdmin>
+                <ManageOrders />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="addproduct"
+            element={
+              <RequireAdmin>
+                <AddProduct />
+              </RequireAdmin>
+            }
+          />
         </Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
