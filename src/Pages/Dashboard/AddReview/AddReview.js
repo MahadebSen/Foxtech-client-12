@@ -1,7 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const AddReview = () => {
+  const [user] = useAuthState(auth);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -13,10 +17,13 @@ const AddReview = () => {
       feedback: await event.target.message.value,
     };
 
-    fetch("http://localhost:5000/addreview", {
+    const url = `http://localhost:5000/addreview?email=${user.email}`;
+
+    fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(review),
     })
@@ -52,6 +59,7 @@ const AddReview = () => {
                     id="name"
                     name="name"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
                   />
                 </div>
               </div>
@@ -65,6 +73,7 @@ const AddReview = () => {
                     id="imgUrl"
                     name="imgUrl"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
                   />
                 </div>
               </div>
@@ -78,6 +87,7 @@ const AddReview = () => {
                     id="rating"
                     name="rating"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
                   />
                 </div>
               </div>
@@ -90,6 +100,7 @@ const AddReview = () => {
                     id="message"
                     name="message"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    required
                   ></textarea>
                 </div>
               </div>
