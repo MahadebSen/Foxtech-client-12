@@ -1,31 +1,40 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import auth from "../../../firebase.init";
+import Loading from "../../Loading/Loading";
+import CancleModal from "./CancleModal";
 import EachOrder from "./EachOrder";
 
 const MyOrder = () => {
-  const [orders, setOrders] = useState([]);
+  const [cancle, setCancle] = useState(null);
   const [user] = useAuthState(auth);
 
   const url = `https://vast-journey-52196.herokuapp.com/order?email=${user.email}`;
 
-  useEffect(() => {
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("available", () =>
     fetch(url, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
+    }).then((res) => {
+      if (res.status === 401 || res.status === 403) {
+        signOut(auth);
+        localStorage.removeItem("accessToken");
+      }
+      return res.json();
     })
-      .then((res) => {
-        if (res.status === 401 || res.status === 403) {
-          signOut(auth);
-          localStorage.removeItem("accessToken");
-        }
-        return res.json();
-      })
-      .then((data) => setOrders(data));
-  }, [url]);
+  );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>
@@ -55,11 +64,21 @@ const MyOrder = () => {
                 key={order._id}
                 order={order}
                 index={index}
+                setCancle={setCancle}
               ></EachOrder>
             ))}
           </tbody>
         </table>
       </div>
+      <section>
+        {cancle && (
+          <CancleModal
+            cancle={cancle}
+            setCancle={setCancle}
+            refetch={refetch}
+          ></CancleModal>
+        )}
+      </section>
     </div>
   );
 };

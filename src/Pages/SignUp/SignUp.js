@@ -88,7 +88,7 @@ const SignUp = () => {
 
   return (
     <section className="flex items-center justify-center my-[120px] mx-[60px] text-left">
-      <div className="flex-1 flex justify-center items-center border-2 rounded-xl shadow-xl">
+      <div className="lg:flex-1 flex justify-center items-center border-2 rounded-xl shadow-xl">
         <div className="m-16">
           <form
             onSubmit={handleSubmit(handleSignUp)}
@@ -236,7 +236,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 hidden lg:block">
         <img className="mx-auto my-auto" src={signup} alt="" />
       </div>
     </section>

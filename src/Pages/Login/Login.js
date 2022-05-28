@@ -166,7 +166,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 hidden lg:block">
         <img className="mx-auto my-auto" src={login} alt="" />
       </div>
     </section>

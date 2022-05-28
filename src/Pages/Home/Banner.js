@@ -1,4 +1,5 @@
 import React from "react";
+import logo3 from "../../images/logo 3.png";
 
 const Banner = () => {
   return (
@@ -7,7 +8,7 @@ const Banner = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="flex-1">
             <img
-              src="https://api.lorem.space/image/movie?w=260&h=400"
+              src={logo3}
               className="max-w-sm rounded-lg shadow-2xl mx-auto"
               alt=""
             />

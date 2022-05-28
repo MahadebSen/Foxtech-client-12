@@ -81,8 +81,12 @@ const Blogs = () => {
           </p>
           <p className="text-lg">
             <span className="font-semibold">Ans.</span>
-            <div className="mx-[120px] my-8 rounded-xl">
-              <img className="rounded-xl" src={carbon} alt="" />
+            <div className="md:mx-[120px] my-8 rounded-xl">
+              <img
+                className="rounded-xl w-[620px] md:w-[680px] lg:w-[710px] mx-auto"
+                src={carbon}
+                alt=""
+              />
             </div>
           </p>
         </div>

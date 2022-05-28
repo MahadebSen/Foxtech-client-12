@@ -1,6 +1,6 @@
 import React from "react";
 
-const EachOrder = ({ order, index }) => {
+const EachOrder = ({ order, index, setCancle }) => {
   const { img, name, address, phoneNumber, orderQuantity, totalPrice } = order;
   return (
     <tr>
@@ -14,7 +14,13 @@ const EachOrder = ({ order, index }) => {
       <td>{orderQuantity}</td>
       <td>${totalPrice}</td>
       <td>
-        <button class="btn bg-red-500 btn-xs">Cancle</button>
+        <label
+          for="my-modal-6"
+          onClick={() => setCancle(order)}
+          class="btn bg-red-500 btn-xs modal-button"
+        >
+          Cancle
+        </label>
       </td>
       <td>
         <button class="btn bg-green-500 btn-xs">Pay</button>
