@@ -4,7 +4,7 @@ import auth from "../../../firebase.init";
 
 const CancleModal = ({ cancle, setCancle, refetch }) => {
   const handleCancle = () => {
-    fetch(`https://vast-journey-52196.herokuapp.com/${cancle._id}`, {
+    fetch(`https://vast-journey-52196.herokuapp.com/delete/${cancle._id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
