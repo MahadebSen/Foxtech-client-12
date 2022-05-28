@@ -29,9 +29,11 @@ const MyOrder = () => {
 
   return (
     <div>
-      <p>my order {orders.length}</p>
-      <div class="overflow-x-auto flex justify-start mt-[0px]">
-        <table class="table w-full">
+      <p className=" font-semibold text-2xl mb-8">
+        My Orders ({orders.length})
+      </p>
+      <div class="overflow-x-auto ">
+        <table class="table w-full text-center">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -42,6 +44,8 @@ const MyOrder = () => {
               <th>Phone Number</th>
               <th>Quantity</th>
               <th>Total Price</th>
+              <th>Cancle</th>
+              <th>Pay</th>
             </tr>
           </thead>
           {/* <!-- body --> */}

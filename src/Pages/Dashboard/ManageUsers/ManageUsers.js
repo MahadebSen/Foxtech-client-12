@@ -29,8 +29,9 @@ const ManageUsers = () => {
 
   return (
     <div>
-      <div class="overflow-x-auto flex justify-start mt-[0px]">
-        <table class="table w-full">
+      <p className=" font-semibold text-2xl mb-8">All Users ({users.length})</p>
+      <div class="overflow-x-auto">
+        <table class="table w-full ">
           {/* <!-- head --> */}
           <thead>
             <tr>
