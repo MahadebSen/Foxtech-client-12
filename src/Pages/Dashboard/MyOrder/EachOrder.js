@@ -19,7 +19,7 @@ const EachOrder = ({ order, index, setCancle }) => {
           onClick={() => setCancle(order)}
           class="btn bg-red-500 btn-xs modal-button"
         >
-          Cancle
+          Cancel
         </label>
       </td>
       <td>

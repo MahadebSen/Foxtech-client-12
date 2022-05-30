@@ -33,9 +33,11 @@ const CancleModal = ({ cancle, setCancle, refetch }) => {
     <div>
       <input type="checkbox" id="my-modal-6" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <p class="font-bold text-lg text-red-500">Are you sure to cancle ?</p>
-          <div class="modal-action">
+        <div class="modal-box flex py-12 flex-col justify-center items-center gap-5">
+          <p class="font-semibold text-2xl text-red-500">
+            Do you want to cancel?
+          </p>
+          <div class="modal-action flex flex-row gap-5">
             <label
               onClick={handleCancle}
               for="my-modal-6"

@@ -26,7 +26,7 @@ const MyPortfolio = () => {
         </p>
         <p className="text-xl mb-4">
           <span className="text-2xl font-medium">List of Skils: </span>
-          <ul className="flex flex-row gap-4 justify-center items-center py-4">
+          <ul className="flex flex-col md:flex-row gap-4 justify-center items-center py-4">
             <li>HTML 5</li>
             <li>CSS 3</li>
             <li>Tailwind css</li>

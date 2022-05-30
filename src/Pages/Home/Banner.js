@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo3 from "../../images/logo 3.png";
 
 const Banner = () => {
@@ -21,7 +22,9 @@ const Banner = () => {
               advocates for the industry, and publishes standards for electrical
               products.
             </p>
-            <button className="btn btn-primary">Know more</button>
+            <button className="btn btn-primary">
+              <Link to="/about">Know more</Link>
+            </button>
           </div>
         </div>
       </div>

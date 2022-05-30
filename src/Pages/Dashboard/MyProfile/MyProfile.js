@@ -69,7 +69,7 @@ const MyProfile = () => {
         <div class="container mx-auto flex px-5 pt-20 pb-10 md:flex-row flex-col items-center">
           <div class="lg:max-w-md lg:w-80 md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover object-center rounded mx-auto w-56"
+              class="object-cover object-center mx-auto w-56 rounded-full"
               alt="hero"
               src={updatedUser.imgUrl ? updatedUser.imgUrl : user.photoURL}
             />
@@ -139,7 +139,7 @@ const MyProfile = () => {
                     type="text"
                     id="imgUrl"
                     name="imgUrl"
-                    placeholder="Image URL"
+                    value={updatedUser.imgUrl}
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
@@ -208,7 +208,7 @@ const MyProfile = () => {
                     type="text"
                     id="link"
                     name="link"
-                    value={updatedUser.link}
+                    value={updatedUser.linkedIn}
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
