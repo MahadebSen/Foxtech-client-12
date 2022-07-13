@@ -15,6 +15,7 @@ https://github.com/MahadebSen/Foxtech-server-12
 - React-Query
 - React-hook-form
 - Swiper 
+- React toastify
 - Firebase authentication
 - Tailwind-CSS 
 - Font-awesome 
