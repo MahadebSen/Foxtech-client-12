@@ -8,7 +8,7 @@ import EachUser from "./EachUser";
 const ManageUsers = () => {
   const [user] = useAuthState(auth);
 
-  const url = `https://vast-journey-52196.herokuapp.com/users?email=${user.email}`;
+  const url = `https://foxtech-server-12-production.up.railway.app/users?email=${user.email}`;
 
   const {
     data: users,
@@ -29,8 +29,8 @@ const ManageUsers = () => {
   return (
     <div>
       <p className=" font-semibold text-2xl mb-8">All Users ({users.length})</p>
-      <div class="overflow-x-auto">
-        <table class="table w-full ">
+      <div className="overflow-x-auto">
+        <table className="table w-full ">
           {/* <!-- head --> */}
           <thead>
             <tr>

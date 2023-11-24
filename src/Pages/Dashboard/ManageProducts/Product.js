@@ -13,7 +13,7 @@ const Product = ({ product, index }) => {
       <td>{available}</td>
       <td>${price}</td>
       <td>
-        <button class="btn bg-red-500 btn-sm">Delete</button>
+        <button className="btn bg-red-500 btn-sm">Delete</button>
       </td>
     </tr>
   );

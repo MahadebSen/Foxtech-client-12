@@ -1,4 +1,3 @@
-import Footer from "../Footer/Footer";
 import carbon from "../../images/carbon.png";
 
 const Blogs = () => {
@@ -117,7 +116,6 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

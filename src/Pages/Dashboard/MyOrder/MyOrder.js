@@ -11,7 +11,7 @@ const MyOrder = () => {
   const [cancle, setCancle] = useState(null);
   const [user] = useAuthState(auth);
 
-  const url = `https://vast-journey-52196.herokuapp.com/order?email=${user.email}`;
+  const url = `https://foxtech-server-12-production.up.railway.app/order?email=${user.email}`;
 
   const {
     data: orders,
@@ -41,8 +41,8 @@ const MyOrder = () => {
       <p className=" font-semibold text-2xl mb-8">
         My Orders ({orders.length})
       </p>
-      <div class="overflow-x-auto ">
-        <table class="table w-full text-center">
+      <div className="overflow-x-auto ">
+        <table className="table w-full text-center">
           {/* <!-- head --> */}
           <thead>
             <tr>

@@ -1,12 +1,11 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Footer from "../Footer/Footer";
 import EachProductCard from "../Home/Products/EachProductCard";
 
 const Inventories = () => {
   const { data: products, isLoading } = useQuery("items", () =>
-    fetch("https://vast-journey-52196.herokuapp.com/products").then((res) =>
-      res.json()
+    fetch("https://foxtech-server-12-production.up.railway.app/products").then(
+      (res) => res.json()
     )
   );
 
@@ -25,7 +24,6 @@ const Inventories = () => {
           ></EachProductCard>
         ))}
       </div>
-      <Footer></Footer>
     </div>
   );
 };

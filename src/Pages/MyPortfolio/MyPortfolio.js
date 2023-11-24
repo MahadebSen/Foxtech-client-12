@@ -41,12 +41,12 @@ const MyPortfolio = () => {
           <span className="text-2xl font-medium">My projects: </span>
           <ul className="flex flex-row gap-4 justify-center items-center py-8">
             <li>
-              <button class="btn btn-outline">
+              <button className="btn btn-outline">
                 <a href="https://waer-wolf.firebaseapp.com/">Mr. Wholesy</a>
               </button>
             </li>
             <li>
-              <button class="btn btn-outline btn-primary">
+              <button className="btn btn-outline btn-primary">
                 <a href="https://foxtech-90c48.web.app/">Foxtech</a>
               </button>
             </li>

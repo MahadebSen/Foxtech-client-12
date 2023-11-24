@@ -5,7 +5,7 @@ import logo3 from "../../images/logo 3.png";
 const Banner = () => {
   return (
     <div>
-      <div className="hero mt-28">
+      <div className="hero mt-28 max-w-7xl mx-auto">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="flex-1">
             <img

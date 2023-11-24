@@ -8,19 +8,19 @@ const About = () => {
         <img className="mx-auto rounded-2xl" src={logo} alt="" />
       </div>
       <p className="text-xl my-7 font-medium">
-        This is a full stack project. In it, I have used "React.js",
-        "Tailwind.css", "Daisy UI", "Firebase", "Express.js", "mongoDB", etc.
+        it's a full-stack project. I have used "React.js", "Tailwind.css",
+        "Daisy UI", "Firebase", "Express.js", "mongoDB", etc.
       </p>
       <div className="text-center my-12">
         <a
-          href="https://github.com/programming-hero-web-course1/manufacturer-website-client-side-MahadebSen"
-          className="border border-2 mx-4 px-5 py-4 rounded-md bg-indigo-500 text-white hover:text-black hover:border-indigo-500 hover:bg-white text-lg"
+          href="https://github.com/MahadebSen/Foxtech-client-12"
+          className="border mx-4 px-5 py-4 rounded-md bg-indigo-500 text-white hover:text-black hover:border-indigo-500 hover:bg-white text-lg"
         >
           Client Side Code
         </a>
         <a
-          href="https://github.com/programming-hero-web-course1/manufacturer-website-server-side-MahadebSen"
-          className="border border-2 mx-4 px-5 py-4 text-lg rounded-md bg-indigo-500 text-white hover:text-black hover:border-indigo-500 hover:bg-white"
+          href="https://github.com/MahadebSen/Foxtech-server-12"
+          className="border mx-4 px-5 py-4 text-lg rounded-md bg-indigo-500 text-white hover:text-black hover:border-indigo-500 hover:bg-white"
         >
           Server Side Code
         </a>

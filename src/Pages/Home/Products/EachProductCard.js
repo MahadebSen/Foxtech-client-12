@@ -19,12 +19,12 @@ const EachProductCard = ({ product }) => {
 
   return (
     <div>
-      <div class="card card-compact bg-base-100 shadow-xl border-2">
+      <div className="card card-compact bg-base-100 shadow-xl border-2">
         <figure className="border-2 rounded-xl m-3">
           <img className="rounded-xl" src={img} alt="" />
         </figure>
-        <div class="card-body text-left">
-          <h2 class="card-title">
+        <div className="card-body text-left">
+          <h2 className="card-title">
             {name.length > 30 ? name.slice(0, 30) + "..." : name}
           </h2>
           <p>

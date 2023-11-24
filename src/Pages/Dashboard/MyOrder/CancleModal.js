@@ -4,12 +4,15 @@ import auth from "../../../firebase.init";
 
 const CancleModal = ({ cancle, setCancle, refetch }) => {
   const handleCancle = () => {
-    fetch(`https://vast-journey-52196.herokuapp.com/delete/${cancle._id}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://foxtech-server-12-production.up.railway.app/delete/${cancle._id}`,
+      {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           signOut(auth);
@@ -31,21 +34,21 @@ const CancleModal = ({ cancle, setCancle, refetch }) => {
 
   return (
     <div>
-      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box flex py-12 flex-col justify-center items-center gap-5">
-          <p class="font-semibold text-2xl text-red-500">
+      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box flex py-12 flex-col justify-center items-center gap-5">
+          <p className="font-semibold text-2xl text-red-500">
             Do you want to cancel?
           </p>
-          <div class="modal-action flex flex-row gap-5">
+          <div className="modal-action flex flex-row gap-5">
             <label
               onClick={handleCancle}
-              for="my-modal-6"
-              class="btn bg-red-400"
+              htmlFor="my-modal-6"
+              className="btn bg-red-400"
             >
               Yes
             </label>
-            <label onClick={handleNo} for="my-modal-6" class="btn">
+            <label onClick={handleNo} htmlFor="my-modal-6" className="btn">
               No
             </label>
           </div>

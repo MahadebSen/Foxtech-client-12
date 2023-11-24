@@ -7,15 +7,19 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user.email;
     if (email) {
-      fetch(`https://vast-journey-52196.herokuapp.com/admin/${email}`, {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://foxtech-server-12-production.up.railway.app/admin/${email}`,
+        {
+          method: "GET",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           setAdmin(data.admin);
           setAdminLoading(false);
         });

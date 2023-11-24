@@ -5,7 +5,7 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://vast-journey-52196.herokuapp.com/products")
+    fetch("https://foxtech-server-12-production.up.railway.app/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -15,8 +15,8 @@ const ManageProducts = () => {
       <p className=" font-semibold text-2xl mb-8">
         All Products ({products.length})
       </p>
-      <div class="overflow-x-auto">
-        <table class="table w-full text-center">
+      <div className="overflow-x-auto">
+        <table className="table w-full text-center">
           {/* <!-- head --> */}
           <thead>
             <tr>

@@ -15,15 +15,15 @@ const EachOrder = ({ order, index, setCancle }) => {
       <td>${totalPrice}</td>
       <td>
         <label
-          for="my-modal-6"
+          htmlFor="my-modal-6"
           onClick={() => setCancle(order)}
-          class="btn bg-red-500 btn-xs modal-button"
+          className="btn bg-red-500 btn-xs modal-button"
         >
           Cancel
         </label>
       </td>
       <td>
-        <button class="btn bg-green-500 btn-xs">Pay</button>
+        <button className="btn bg-green-500 btn-xs">Pay</button>
       </td>
     </tr>
   );

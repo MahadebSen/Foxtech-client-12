@@ -142,7 +142,7 @@ const Login = () => {
             </div>
             <div>{errorMsg}</div>
             <div className="pt-3">
-              <button class="btn">Log in</button>
+              <button className="btn">Log in</button>
             </div>
           </form>
           <div className="mt-5">

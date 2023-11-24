@@ -4,13 +4,14 @@ import {
   faThumbsUp,
   faTruckFast,
   faUsers,
+  faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const BusinessSummary = () => {
   return (
-    <section className="mb-10">
-      <p className="font-semibold text-5xl mb-20">Business Trust On Us</p>
+    <section className="mt-28 mb-10 max-w-7xl mx-auto">
+      <p className=" text-4xl mb-20">Millions Of Business Trust On Us</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-10">
         <div className="border-2 rounded-lg py-8 shadow-xl border-purple-400">
           <FontAwesomeIcon className="text-6xl" icon={faEarthAmerica} />
@@ -18,7 +19,7 @@ const BusinessSummary = () => {
           <p className="font-semibold text-2xl">Countries</p>
         </div>
         <div className="border-2 rounded-lg py-8 shadow-xl border-purple-400">
-          <FontAwesomeIcon className="text-6xl" icon={faTruckFast} />
+          <FontAwesomeIcon className="text-6xl" icon={faCartShopping} />
           <p className="font-bold text-5xl mt-3">562+</p>
           <p className="font-semibold text-2xl">Product delivery</p>
         </div>
@@ -26,6 +27,11 @@ const BusinessSummary = () => {
           <FontAwesomeIcon className="text-6xl" icon={faUsers} />
           <p className="font-bold text-5xl mt-3">368+</p>
           <p className="font-semibold text-2xl">Happy Clients</p>
+        </div>
+        <div className="border-2 rounded-lg py-8 shadow-xl border-purple-400">
+          <FontAwesomeIcon className="text-6xl" icon={faTruckFast} />
+          <p className="font-bold text-5xl mt-3">24/7</p>
+          <p className="font-semibold text-2xl">Fast delivery</p>
         </div>
         <div className="border-2 rounded-lg py-8 shadow-xl border-purple-400">
           <FontAwesomeIcon className="text-6xl" icon={faThumbsUp} />

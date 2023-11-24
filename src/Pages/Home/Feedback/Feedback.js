@@ -16,37 +16,39 @@ const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("https://vast-journey-52196.herokuapp.com/reviews")
+    fetch("https://foxtech-server-12-production.up.railway.app/reviews")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data));
   }, []);
 
   return (
-    <div className="mx-10 my-8 hidden md:block">
-      <p className="text-4xl mt-[150px] mb-20">Our Customers' Feedback</p>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {feedbacks.map((item) => (
-          <SwiperSlide>
-            <EachFeedback key={item._id} item={item}></EachFeedback>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="max-w-7xl mx-auto">
+      <div className="mx-10 my-8 hidden md:block">
+        <p className="text-4xl mt-[150px] mb-20">Our Customers' Feedback</p>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={30}
+          slidesPerGroup={3}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {feedbacks.map((item) => (
+            <SwiperSlide>
+              <EachFeedback key={item._id} item={item}></EachFeedback>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };

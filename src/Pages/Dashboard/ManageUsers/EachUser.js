@@ -7,7 +7,7 @@ const EachUser = ({ user, refetch, index }) => {
   const { name, email, role } = user;
 
   const makeAdmin = () => {
-    const url = `https://vast-journey-52196.herokuapp.com/user/admin/${email}`;
+    const url = `https://foxtech-server-12-production.up.railway.app/user/admin/${email}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -40,7 +40,7 @@ const EachUser = ({ user, refetch, index }) => {
         {role === "admin" ? (
           <span className="text-green-700">Site's admin</span>
         ) : (
-          <button onClick={makeAdmin} class="btn bg-purple-500 btn-xs">
+          <button onClick={makeAdmin} className="btn bg-purple-500 btn-xs">
             Make admin
           </button>
         )}

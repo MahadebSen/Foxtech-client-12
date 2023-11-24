@@ -6,8 +6,8 @@ import EachProductCard from "./EachProductCard";
 const Products = () => {
   const navigate = useNavigate();
   const { data: products, isLoading } = useQuery("items", () =>
-    fetch("https://vast-journey-52196.herokuapp.com/products").then((res) =>
-      res.json()
+    fetch("https://foxtech-server-12-production.up.railway.app/products").then(
+      (res) => res.json()
     )
   );
 
@@ -16,7 +16,7 @@ const Products = () => {
   }
 
   return (
-    <div className="mb-24">
+    <div className="mb-24 max-w-7xl mx-auto">
       <p className="text-4xl mt-32 mb-20">Our Products</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-10">
         {products.slice(0, 6).map((product) => (

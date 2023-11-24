@@ -24,10 +24,11 @@ import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./CustomHooks/RequireAuth";
 import NotFound from "./Pages/404/NotFound";
 import RequireAdmin from "./CustomHooks/RequireAdmin";
+import Footer from "./Pages/Footer/Footer";
 
 function App() {
   return (
-    <div className="App max-w-7xl mx-auto">
+    <div className="App ">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -92,6 +93,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Footer />
       <ToastContainer />
     </div>
   );

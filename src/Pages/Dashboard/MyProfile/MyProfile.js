@@ -7,7 +7,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [updatedUser, setUpdatedUser] = useState({});
 
-  const url = `https://vast-journey-52196.herokuapp.com/myprofile?email=${user.email}`;
+  const url = `https://foxtech-server-12-production.up.railway.app/myprofile?email=${user.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -39,7 +39,7 @@ const MyProfile = () => {
     };
     // console.table(profile);
 
-    const url2 = `https://vast-journey-52196.herokuapp.com/user?email=${user.email}`;
+    const url2 = `https://foxtech-server-12-production.up.railway.app/user?email=${user.email}`;
 
     fetch(url2, {
       method: "PUT",
@@ -64,24 +64,24 @@ const MyProfile = () => {
 
   return (
     <div>
-      <section class="text-gray-600 body-font">
+      <section className="text-gray-600 body-font">
         {/* <p>My Profile</p> */}
-        <div class="container mx-auto flex px-5 pt-20 pb-10 md:flex-row flex-col items-center">
-          <div class="lg:max-w-md lg:w-80 md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <div className="container mx-auto flex px-5 pt-20 pb-10 md:flex-row flex-col items-center">
+          <div className="lg:max-w-md lg:w-80 md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover object-center mx-auto w-56 rounded-full"
+              className="object-cover object-center mx-auto w-56 rounded-full"
               alt="hero"
               src={updatedUser.imgUrl ? updatedUser.imgUrl : user.photoURL}
             />
           </div>
-          <div class="lg:flex-grow md:w-1/2 lg:pl-16 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-2 font-medium text-gray-900">
+          <div className="lg:flex-grow md:w-1/2 lg:pl-16 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-2 font-medium text-gray-900">
               {user?.displayName}
             </h1>
             <p className="text-lg mb-2">
               <span className="font-bold">Email:</span> {user.email}
             </p>
-            <p class="text-md mb-2">
+            <p className="text-md mb-2">
               <span className="font-bold text-lg">Education: </span>
               {updatedUser.education ? updatedUser.education : "NA"}
             </p>
@@ -105,89 +105,107 @@ const MyProfile = () => {
           </div>
         </div>
       </section>
-      <div class="divider mx-12"></div>
-      <section class="text-gray-600 body-font relative text-left">
-        <div class="container px-5 py-5 mx-auto">
-          <div class="flex flex-col text-center w-full mb-6">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+      <div className="divider mx-12"></div>
+      <section className="text-gray-600 body-font relative text-left">
+        <div className="container px-5 py-5 mx-auto">
+          <div className="flex flex-col text-center w-full mb-6">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
               Update your profile
             </h1>
           </div>
-          <div class="lg:w-1/2 md:w-2/3 mx-auto mb-5">
-            <form onSubmit={handleSubmit} class="flex flex-wrap -m-2">
-              <div class="p-2 w-full">
-                <label for="name" class="leading-7 text-sm text-gray-600">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto mb-5">
+            <form onSubmit={handleSubmit} className="flex flex-wrap -m-2">
+              <div className="p-2 w-full">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-600"
+                >
                   Youe Name:
                 </label>
-                <div class="relative">
+                <div className="relative">
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={user.displayName}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     disabled
                   />
                 </div>
               </div>
-              <div class="p-2 w-full">
-                <label for="name" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-full">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-600"
+                >
                   Image URL:
                 </label>
-                <div class="relative">
+                <div className="relative">
                   <input
                     type="text"
                     id="imgUrl"
                     name="imgUrl"
                     value={updatedUser.imgUrl}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
-              <div class="p-2 w-full">
-                <label for="name" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-full">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-600"
+                >
                   Email:
                 </label>
-                <div class="relative">
+                <div className="relative">
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={user.email}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     disabled
                   />
                 </div>
               </div>
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="name" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
                     Address:
                   </label>
                   <textarea
                     id="address"
                     name="address"
                     value={updatedUser.address}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-16 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-16 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   ></textarea>
                 </div>
               </div>
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="name" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
                     Education Background:
                   </label>
                   <textarea
                     id="education"
                     name="education"
                     value={updatedUser.education}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   ></textarea>
                 </div>
               </div>
-              <div class="p-2 w-1/2">
-                <div class="relative">
-                  <label for="name" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-1/2">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
                     Phone no.
                   </label>
                   <input
@@ -195,26 +213,29 @@ const MyProfile = () => {
                     id="phNumber"
                     name="phNumber"
                     value={updatedUser.phoneNumber}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
-              <div class="p-2 w-1/2">
-                <label for="name" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-1/2">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-600"
+                >
                   LinkedIn Link:
                 </label>
-                <div class="relative">
+                <div className="relative">
                   <input
                     type="text"
                     id="link"
                     name="link"
                     value={updatedUser.linkedIn}
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
-              <div class="p-2 mt-3 w-full">
-                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              <div className="p-2 mt-3 w-full">
+                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                   Submit
                 </button>
               </div>

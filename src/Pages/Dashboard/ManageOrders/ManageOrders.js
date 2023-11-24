@@ -7,7 +7,7 @@ const ManageOrders = () => {
   const [user] = useAuthState(auth);
   const [allOrders, setAllOrders] = useState([]);
 
-  const url = `https://vast-journey-52196.herokuapp.com/allorders?email=${user?.email}`;
+  const url = `https://foxtech-server-12-production.up.railway.app/allorders?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -25,8 +25,8 @@ const ManageOrders = () => {
       <p className=" font-semibold text-2xl mb-8">
         All Orders ({allOrders.length})
       </p>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>

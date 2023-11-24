@@ -7,7 +7,7 @@ const EachOrder = ({ order, index }) => {
     <tr>
       <th>{index + 1}</th>
       <td>
-        <img src={img} alt="" />
+        <img className="w-[66px]" src={img} alt="" />
       </td>
       <td>{name.length > 10 ? name.slice(0, 10) + "..." : name}</td>
       <td>{email}</td>

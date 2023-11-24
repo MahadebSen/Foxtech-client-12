@@ -26,9 +26,7 @@ const Navbar = () => {
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
-      <li>
-        <Link to="/myportfolio">My Portfolio</Link>
-      </li>
+
       {user && (
         <li>
           <Link to="/dashboard">Dashboard</Link>
@@ -47,11 +45,11 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="">
+    <div className="max-w-7xl mx-auto">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabindex="0" className="btn btn-ghost lg:hidden">
+            <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -60,15 +58,15 @@ const Navbar = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
               </svg>
             </label>
             <ul
-              tabindex="0"
+              tabIndex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {manus}
@@ -82,7 +80,10 @@ const Navbar = () => {
           <ul className="menu menu-horizontal p-0">{manus}</ul>
         </div>
         <div className="navbar-end lg:hidden">
-          <label for="my-drawer-2" class="btn btn-primary drawer-button ">
+          <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary drawer-button "
+          >
             Open drawer
           </label>
         </div>

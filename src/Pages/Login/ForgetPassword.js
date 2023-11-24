@@ -68,7 +68,7 @@ const ForgetPassword = () => {
           </label>
           <div>{errorMsg}</div>
           <div className="pt-3 my-10">
-            <button class="btn">Submit</button>
+            <button className="btn">Submit</button>
           </div>
         </form>
       </div>
