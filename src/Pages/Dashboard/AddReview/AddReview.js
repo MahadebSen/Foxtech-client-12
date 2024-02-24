@@ -17,7 +17,7 @@ const AddReview = () => {
       feedback: await event.target.message.value,
     };
 
-    const url = `https://foxtech-server-12-production.up.railway.app/addreview?email=${user.email}`;
+    const url = `https://foxtech-server.onrender.com/addreview?email=${user.email}`;
 
     fetch(url, {
       method: "POST",

@@ -8,7 +8,7 @@ import EachUser from "./EachUser";
 const ManageUsers = () => {
   const [user] = useAuthState(auth);
 
-  const url = `https://foxtech-server-12-production.up.railway.app/users?email=${user.email}`;
+  const url = `https://foxtech-server.onrender.com/users?email=${user.email}`;
 
   const {
     data: users,

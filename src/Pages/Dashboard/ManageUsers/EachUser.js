@@ -7,7 +7,7 @@ const EachUser = ({ user, refetch, index }) => {
   const { name, email, role } = user;
 
   const makeAdmin = () => {
-    const url = `https://foxtech-server-12-production.up.railway.app/user/admin/${email}`;
+    const url = `https://foxtech-server.onrender.com/user/admin/${email}`;
     fetch(url, {
       method: "PUT",
       headers: {

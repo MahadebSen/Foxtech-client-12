@@ -16,7 +16,7 @@ const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("https://foxtech-server-12-production.up.railway.app/reviews")
+    fetch("https://foxtech-server.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data));
   }, []);

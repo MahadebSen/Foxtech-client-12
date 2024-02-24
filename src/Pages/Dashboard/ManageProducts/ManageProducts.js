@@ -5,7 +5,7 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://foxtech-server-12-production.up.railway.app/products")
+    fetch("https://foxtech-server.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

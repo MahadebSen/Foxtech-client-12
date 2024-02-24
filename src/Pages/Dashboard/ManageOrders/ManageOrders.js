@@ -7,7 +7,7 @@ const ManageOrders = () => {
   const [user] = useAuthState(auth);
   const [allOrders, setAllOrders] = useState([]);
 
-  const url = `https://foxtech-server-12-production.up.railway.app/allorders?email=${user?.email}`;
+  const url = `https://foxtech-server.onrender.com/allorders?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url, {

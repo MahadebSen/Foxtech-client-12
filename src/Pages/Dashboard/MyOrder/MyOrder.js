@@ -11,7 +11,7 @@ const MyOrder = () => {
   const [cancle, setCancle] = useState(null);
   const [user] = useAuthState(auth);
 
-  const url = `https://foxtech-server-12-production.up.railway.app/order?email=${user.email}`;
+  const url = `https://foxtech-server.onrender.com/order?email=${user.email}`;
 
   const {
     data: orders,

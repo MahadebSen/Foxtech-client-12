@@ -4,8 +4,8 @@ import EachProductCard from "../Home/Products/EachProductCard";
 
 const Inventories = () => {
   const { data: products, isLoading } = useQuery("items", () =>
-    fetch("https://foxtech-server-12-production.up.railway.app/products").then(
-      (res) => res.json()
+    fetch("https://foxtech-server.onrender.com/products").then((res) =>
+      res.json()
     )
   );
 

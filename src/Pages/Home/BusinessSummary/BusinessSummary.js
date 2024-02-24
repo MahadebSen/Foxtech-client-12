@@ -12,7 +12,7 @@ const BusinessSummary = () => {
   return (
     <section className="mt-28 mb-10 max-w-7xl mx-auto">
       <p className=" text-4xl mb-20">Millions Of Business Trust On Us</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 mx-10">
         <div className="border-2 rounded-lg py-8 shadow-xl border-purple-400">
           <FontAwesomeIcon className="text-6xl" icon={faEarthAmerica} />
           <p className="font-bold text-5xl mt-3">87</p>

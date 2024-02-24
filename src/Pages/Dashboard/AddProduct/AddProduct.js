@@ -18,7 +18,7 @@ const AddProduct = () => {
       price: await event.target.price.value,
     };
 
-    const url = `https://foxtech-server-12-production.up.railway.app/addproduct?email=${user.email}`;
+    const url = `https://foxtech-server.onrender.com/addproduct?email=${user.email}`;
 
     fetch(url, {
       method: "POST",

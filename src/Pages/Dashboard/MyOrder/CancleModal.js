@@ -4,15 +4,12 @@ import auth from "../../../firebase.init";
 
 const CancleModal = ({ cancle, setCancle, refetch }) => {
   const handleCancle = () => {
-    fetch(
-      `https://foxtech-server-12-production.up.railway.app/delete/${cancle._id}`,
-      {
-        method: "DELETE",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    fetch(`https://foxtech-server.onrender.com/delete/${cancle._id}`, {
+      method: "DELETE",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           signOut(auth);

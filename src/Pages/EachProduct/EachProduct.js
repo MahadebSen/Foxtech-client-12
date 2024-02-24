@@ -11,7 +11,7 @@ const EachProduct = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
-  const url = `https://foxtech-server-12-production.up.railway.app/products/${params.id}`;
+  const url = `https://foxtech-server.onrender.com/products/${params.id}`;
 
   useEffect(() => {
     fetch(url)
@@ -52,16 +52,13 @@ const EachProduct = () => {
       totalPrice: parseInt(event.target.quantity.value) * parseInt(price),
     };
 
-    fetch(
-      `https://foxtech-server-12-production.up.railway.app/products/${params.id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(order),
-      }
-    )
+    fetch(`https://foxtech-server.onrender.com/products/${params.id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {

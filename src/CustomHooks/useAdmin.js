@@ -7,16 +7,13 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user.email;
     if (email) {
-      fetch(
-        `https://foxtech-server-12-production.up.railway.app/admin/${email}`,
-        {
-          method: "GET",
-          headers: {
-            "content-type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
+      fetch(`https://foxtech-server.onrender.com/admin/${email}`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

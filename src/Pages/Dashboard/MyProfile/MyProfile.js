@@ -7,7 +7,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [updatedUser, setUpdatedUser] = useState({});
 
-  const url = `https://foxtech-server-12-production.up.railway.app/myprofile?email=${user.email}`;
+  const url = `https://foxtech-server.onrender.com/myprofile?email=${user.email}`;
 
   useEffect(() => {
     fetch(url, {
@@ -39,7 +39,7 @@ const MyProfile = () => {
     };
     // console.table(profile);
 
-    const url2 = `https://foxtech-server-12-production.up.railway.app/user?email=${user.email}`;
+    const url2 = `https://foxtech-server.onrender.com/user?email=${user.email}`;
 
     fetch(url2, {
       method: "PUT",
